@@ -21,7 +21,7 @@
 <style>
     html, body {
         margin: 0;
-        height:100%;
+        height: calc(100% - 1rem);
         min-width: 800px;
     }
 
@@ -45,6 +45,6 @@
         height: 100%;
         padding: 2rem;
         background-color: white;
-        border: 2rem solid #e4e9f3;
+        border: 2rem solid #e2e6ea;
     }
 </style>

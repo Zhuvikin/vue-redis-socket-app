@@ -1,8 +1,7 @@
 <template>
     <div class="wrapper">
         <div id="content">
-            <h1>Content</h1>
-            <p>text text text</p>
+            <router-view></router-view>
         </div>
     </div>
 </template>
