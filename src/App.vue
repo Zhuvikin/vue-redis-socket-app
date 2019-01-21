@@ -105,13 +105,13 @@
         border-color: #dae0e5;
     }
 
-    .btn-primary {
+    .btn-primary, .router-link-active {
         color: #fff;
         background-color: #17a2b8;
         border-color: #17a2b8;
     }
 
-    .btn-primary:hover {
+    .btn-primary:hover, .router-link-active:hover {
         color: #fff;
         background-color: #138496;
         border-color: #117a8b;
