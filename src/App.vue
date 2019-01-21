@@ -128,6 +128,7 @@
     table {
         width: 100%;
         border-collapse: collapse;
+        word-wrap: break-word;
     }
 
     td.wide-cell {
@@ -144,5 +145,9 @@
         font-size: 16px;
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         margin: 0;
+    }
+
+    .nowrap {
+        white-space: nowrap;
     }
 </style>
