@@ -124,4 +124,24 @@
     .error {
         color: red;
     }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    td.wide-cell {
+        width: 30%;
+    }
+
+    td {
+        padding: 1rem;
+        background-color: #f8f9fa;
+        border-bottom: 1rem solid white;
+    }
+
+    pre {
+        font-size: 16px;
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    }
 </style>

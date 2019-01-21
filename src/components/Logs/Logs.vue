@@ -5,10 +5,9 @@
             <table>
                 <tbody>
                 <tr v-for="item in events" v-bind:key="item.time">
-                    <td>{{ item.time }}</td>
-                    <td>
-                        <pre>{{ item.args }}</pre>
-                    </td>
+                    <td class="uppercase">{{ item.type }}</td>
+                    <td>{{ item.info }}</td>
+                    <td class="wide-cell">{{ item.time }}</td>
                 </tr>
                 </tbody>
             </table>
@@ -17,12 +16,28 @@
 </template>
 
 <script>
+    import format from 'date-fns/format'
+    import parse from 'date-fns/parse'
+
     export default {
         name: 'Logs',
         computed: {
-            events () {
-                return this.$store.state.events
-            }
-        }
+            events() {
+                return this.$store.state.events.map(({args, time}) => {
+                    const type = args[0]
+                    return ({
+                        type,
+                        info: args.slice(1),
+                        time: format(parse(time * 1000, 'x'), 'DD/MM/YYYY HH:mm:ss'),
+                    })
+                })
+            },
+        },
     }
 </script>
+
+<style>
+    .uppercase {
+        text-transform: uppercase;
+    }
+</style>
