@@ -6,8 +6,8 @@
                 <tbody>
                 <tr v-for="item in events" v-bind:key="item.key">
                     <td class="uppercase nowrap">{{ item.type }}</td>
-                    <td>{{ item.info }}</td>
-                    <td class="wide-cell">{{ item.time }}</td>
+                    <td><pre>{{ item.info }}</pre></td>
+                    <td class="wide-cell nowrap">{{ item.time }}</td>
                 </tr>
                 </tbody>
             </table>

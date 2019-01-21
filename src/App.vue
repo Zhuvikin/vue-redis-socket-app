@@ -133,6 +133,7 @@
 
     td.wide-cell {
         width: 30%;
+        word-break: break-all;
     }
 
     td {
@@ -145,6 +146,9 @@
         font-size: 16px;
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         margin: 0;
+        white-space: pre-wrap;
+        word-wrap: break-spaces;
+        word-break: break-all;
     }
 
     .nowrap {

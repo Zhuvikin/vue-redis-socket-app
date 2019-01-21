@@ -5,8 +5,8 @@
             <table>
                 <tbody>
                 <tr v-for="item in dataItems" v-bind:key="item.id">
-                    <td>{{ item.title }}</td>
-                    <td class="wide-cell">
+                    <td class="wide-cell">{{ item.title }}</td>
+                    <td class="text-cell">
                         <pre>{{ item.text }}</pre>
                     </td>
                 </tr>
