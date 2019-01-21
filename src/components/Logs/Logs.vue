@@ -4,7 +4,7 @@
         <div class="page-content">
             <table>
                 <tbody>
-                <tr v-for="item in events" v-bind:key="item.time">
+                <tr v-for="item in events" v-bind:key="item.key">
                     <td class="uppercase">{{ item.type }}</td>
                     <td>{{ item.info }}</td>
                     <td class="wide-cell">{{ item.time }}</td>
@@ -24,11 +24,18 @@
         computed: {
             events() {
                 return this.$store.state.events.map(({args, time}) => {
-                    const type = args[0]
+                    let type = args[0]
+                    if (args.length > 1) {
+                        const operation = args[1]
+                        if (operation === 'login') {
+                            type = operation
+                        }
+                    }
                     return ({
                         type,
-                        info: args.slice(1),
+                        info: args.length > 1 ? args.slice(1) : '',
                         time: format(parse(time * 1000, 'x'), 'DD/MM/YYYY HH:mm:ss'),
+                        key: time,
                     })
                 })
             },

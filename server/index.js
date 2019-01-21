@@ -3,7 +3,9 @@
 const io = require('socket.io')
 
 const server = require('./express')
-const redisClient = require('./redis-client')
+const createRedisClient = require('./redis-client')
+
+const redisClient = createRedisClient()
 
 const SERVER_PORT = 3000
 
@@ -26,6 +28,8 @@ socketServer = io.listen(httpServer)
 
 socketServer.on('connection', socket => {
     console.log('A user is connected, send available data...')
+    redisClient.publish('login', new Date().getTime())
+
     redisClient.lrange('data', 0, -1, function (err, reply) {
         const data = reply.map(JSON.parse).map((item, id) => ({...item, id}))
         socket.emit('initialData', data)
