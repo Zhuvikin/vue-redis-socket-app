@@ -4,7 +4,7 @@
 Make sure you have node, yarn and docker properly installed. Then run
 
 ```
-yarn install
+docker pull redis && yarn install
 ```
 
 ### Run application
