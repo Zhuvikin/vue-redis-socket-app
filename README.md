@@ -1,29 +1,16 @@
 # kaspersky
 
 ## Project setup
+Make sure you have node, yarn and docker properly installed. Then run
+
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### Run application
+
+This will start RedisDB docker container, express server and webpack dev server with client application on `http://localhost:8080/`
 ```
-yarn run serve
+yarn start
 ```
 
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
