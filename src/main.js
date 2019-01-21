@@ -1,26 +1,19 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App.vue'
-import Logs from './components/Logs'
-import Data from './components/Data'
-import AddData from './components/AddData'
+import VueSocketIO from 'vue-socket.io'
+import Vuex from 'vuex'
+import createStore from './store'
+import createRouter from './routes'
+import { SERVER_URI } from './constants'
 
+Vue.use(Vuex)
 Vue.use(VueRouter)
-
+Vue.use(new VueSocketIO({connection: SERVER_URI}))
 Vue.config.productionTip = false
 
-const routes = [
-    {path: '*', redirect: '/addData'},
-    {path: '/logs', component: Logs},
-    {path: '/data', component: Data},
-    {path: '/addData', component: AddData},
-]
-
-const router = new VueRouter({
-    routes,
-})
-
 new Vue({
-    router,
+    router: createRouter(),
+    store: createStore(),
     render: h => h(App),
 }).$mount('#app')
